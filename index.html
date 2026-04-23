@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChessBuddy | Play, Train, and Explore Chess</title>
+  <meta
+    name="description"
+    content="ChessBuddy now includes a playable local chess board with legal moves, themes, piece styles, and board variations."
+  >
+  <script>document.documentElement.classList.add("js-enabled");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#hero" data-open-view="overview" aria-label="ChessBuddy home">
+          <span class="brand-mark">CB</span>
+          <span class="brand-text">ChessBuddy</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#features" data-open-view="overview">Features</a>
+          <a href="#how-it-works" data-open-view="overview">How It Works</a>
+          <a href="#testimonials" data-open-view="overview">Voices</a>
+          <a href="#play" data-open-view="play">Play</a>
+        </nav>
+
+        <a class="button button-secondary nav-button" href="#play" data-open-view="play">Open Board</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="view-switcher">
+        <div class="container">
+          <div class="view-tabs" role="tablist" aria-label="ChessBuddy views">
+            <button
+              class="view-tab is-active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              data-view-target="overview"
+            >
+              Overview
+            </button>
+            <button
+              class="view-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-view-target="play"
+            >
+              Play Chess
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="view-panel" data-view-panel="overview">
+        <section class="hero-section" id="hero">
+          <div class="hero-glow hero-glow-left"></div>
+          <div class="hero-glow hero-glow-right"></div>
+          <div class="container hero-grid">
+            <div class="hero-copy reveal">
+              <p class="eyebrow">All-in-one chess helper</p>
+              <h1>Play, train, and sharpen your chess in one calm workspace.</h1>
+              <p class="hero-text">
+                ChessBuddy keeps the polished landing-page feel, but now it also includes a fully playable
+                local chess board with legal move validation, custom themes, and piece styling controls.
+              </p>
+
+              <div class="hero-actions">
+                <a class="button button-primary" href="#play" data-open-view="play">Play a Local Game</a>
+                <a class="button button-ghost" href="#features" data-open-view="overview">See the Features</a>
+              </div>
+
+              <div class="hero-stats" aria-label="Product highlights">
+                <article class="stat-card">
+                  <strong data-count="64">64</strong>
+                  <span>squares of legal move logic</span>
+                </article>
+                <article class="stat-card">
+                  <strong data-count="4">4</strong>
+                  <span>board themes to explore</span>
+                </article>
+                <article class="stat-card">
+                  <strong data-count="3">3</strong>
+                  <span>piece style presets</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="hero-visual reveal reveal-delay">
+              <div class="board-stage" id="board-stage">
+                <div class="board-card preview-board-card">
+                  <div class="board-header">
+                    <span>Live ChessBuddy Preview</span>
+                    <span class="board-badge">Playable mode below</span>
+                  </div>
+
+                  <div class="chess-board preview-board" aria-hidden="true">
+                    <div class="square light"><span class="piece piece-dark">&#9820;</span></div>
+                    <div class="square dark"><span class="piece piece-dark">&#9822;</span></div>
+                    <div class="square light"><span class="piece piece-dark">&#9821;</span></div>
+                    <div class="square dark"><span class="piece piece-dark">&#9819;</span></div>
+                    <div class="square light"><span class="piece piece-dark">&#9818;</span></div>
+                    <div class="square dark"><span class="piece piece-dark">&#9821;</span></div>
+                    <div class="square light"><span class="piece piece-dark">&#9822;</span></div>
+                    <div class="square dark"><span class="piece piece-dark">&#9820;</span></div>
+
+                    <div class="square dark"><span class="piece piece-dark">&#9823;</span></div>
+                    <div class="square light"><span class="piece piece-dark">&#9823;</span></div>
+                    <div class="square dark"><span class="piece piece-dark">&#9823;</span></div>
+                    <div class="square light"><span class="piece piece-dark">&#9823;</span></div>
+                    <div class="square dark"></div>
+                    <div class="square light"><span class="piece piece-dark">&#9823;</span></div>
+                    <div class="square dark"><span class="piece piece-dark">&#9823;</span></div>
+                    <div class="square light"><span class="piece piece-dark">&#9823;</span></div>
+
+                    <div class="square light"></div>
+                    <div class="square dark"></div>
+                    <div class="square light"></div>
+                    <div class="square dark"></div>
+                    <div class="square light"></div>
+                    <div class="square dark"></div>
+                    <div class="square light"></div>
+                    <div class="square dark"></div>
+
+                    <div class="square dark"></div>
+                    <div class="square light"></div>
+                    <div class="square dark"></div>
+                    <div class="square light"><span class="piece piece-light">&#9817;</span></div>
+                    <div class="square dark"><span class="piece piece-dark">&#9823;</span></div>
+                    <div class="square light"></div>
+                    <div class="square dark"></div>
+                    <div class="square light"></div>
+
+                    <div class="square light"></div>
+                    <div class="square dark"></div>
+                    <div class="square light"></div>
+                    <div class="square dark"></div>
+                    <div class="square light"><span class="piece piece-light">&#9817;</span></div>
+                    <div class="square dark"></div>
+                    <div class="square light"></div>
+                    <div class="square dark"></div>
+
+                    <div class="square dark"></div>
+                    <div class="square light"></div>
+                    <div class="square dark"></div>
+                    <div class="square light"></div>
+                    <div class="square dark"></div>
+                    <div class="square light"><span class="piece piece-light">&#9816;</span></div>
+                    <div class="square dark"></div>
+                    <div class="square light"></div>
+
+                    <div class="square light"><span class="piece piece-light">&#9817;</span></div>
+                    <div class="square dark"><span class="piece piece-light">&#9817;</span></div>
+                    <div class="square light"><span class="piece piece-light">&#9817;</span></div>
+                    <div class="square dark"></div>
+                    <div class="square light"></div>
+                    <div class="square dark"><span class="piece piece-light">&#9817;</span></div>
+                    <div class="square light"><span class="piece piece-light">&#9817;</span></div>
+                    <div class="square dark"><span class="piece piece-light">&#9817;</span></div>
+
+                    <div class="square dark"><span class="piece piece-light">&#9814;</span></div>
+                    <div class="square light"></div>
+                    <div class="square dark"><span class="piece piece-light">&#9815;</span></div>
+                    <div class="square light"><span class="piece piece-light">&#9813;</span></div>
+                    <div class="square dark"><span class="piece piece-light">&#9812;</span></div>
+                    <div class="square light"><span class="piece piece-light">&#9815;</span></div>
+                    <div class="square dark"></div>
+                    <div class="square light"><span class="piece piece-light">&#9814;</span></div>
+                  </div>
+
+                  <div class="insight-card">
+                    <p class="insight-label">Today's nudge</p>
+                    <p class="insight-title">Switch to the Play Chess tab and test a full local game with legal rules.</p>
+                    <p class="insight-copy">ChessBuddy now supports castling, en passant, promotion, checkmates, and draw rules.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-features" id="features">
+          <div class="container">
+            <div class="section-heading reveal">
+              <p class="eyebrow">Features</p>
+              <h2>ChessBuddy is now more than a landing page.</h2>
+              <p>
+                The site still introduces the product cleanly, but it now also includes a real chess surface
+                for local two-sided play and customization.
+              </p>
+            </div>
+
+            <div class="feature-grid">
+              <article class="feature-card reveal">
+                <span class="feature-index">01</span>
+                <h3>Fully legal local play</h3>
+                <p>Every move is validated so you can only make legal moves, including castling, en passant, and promotion.</p>
+              </article>
+              <article class="feature-card reveal">
+                <span class="feature-index">02</span>
+                <h3>Play both sides</h3>
+                <p>Use one board for local practice, move for White and Black, and flip the orientation whenever you want.</p>
+              </article>
+              <article class="feature-card reveal">
+                <span class="feature-index">03</span>
+                <h3>Theme and board control</h3>
+                <p>Change the board colors, choose a board variation, and switch between multiple piece style presets.</p>
+              </article>
+              <article class="feature-card reveal">
+                <span class="feature-index">04</span>
+                <h3>Game-state feedback</h3>
+                <p>Track move history, captures, turn status, check states, and game-end conditions in the side panel.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-process" id="how-it-works">
+          <div class="container process-layout">
+            <div class="section-heading reveal">
+              <p class="eyebrow">How it works</p>
+              <h2>Use the overview to understand it, then jump into the board to play.</h2>
+              <p>
+                ChessBuddy keeps the product story visible while giving you a dedicated chess tab for hands-on
+                play and experimentation.
+              </p>
+            </div>
+
+            <div class="process-steps">
+              <article class="process-card reveal">
+                <span class="process-number">1</span>
+                <div>
+                  <h3>Open the Play tab</h3>
+                  <p>Switch from the overview into a dedicated chess workspace without leaving the website.</p>
+                </div>
+              </article>
+              <article class="process-card reveal">
+                <span class="process-number">2</span>
+                <div>
+                  <h3>Choose your setup</h3>
+                  <p>Pick the board theme, piece look, and board frame variation that feels best to you.</p>
+                </div>
+              </article>
+              <article class="process-card reveal">
+                <span class="process-number">3</span>
+                <div>
+                  <h3>Play a full game</h3>
+                  <p>Move both sides, watch legal move hints, and let the board enforce chess rules from start to finish.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-testimonials" id="testimonials">
+          <div class="container">
+            <div class="section-heading reveal">
+              <p class="eyebrow">Voices</p>
+              <h2>Placeholder stories for now, real ChessBuddy feedback later.</h2>
+              <p>
+                These are still placeholder testimonials, but now they sit beside a working board instead of
+                a static concept.
+              </p>
+            </div>
+
+            <div class="testimonial-grid">
+              <article class="testimonial-card reveal">
+                <p>
+                  "The playable board made the site feel real immediately. It went from a concept page to a product."
+                </p>
+                <div class="testimonial-meta">
+                  <strong>Arham R.</strong>
+                  <span>Rapid player, placeholder quote</span>
+                </div>
+              </article>
+              <article class="testimonial-card reveal">
+                <p>
+                  "Being able to flip the board and test legal moves for both sides is exactly what I wanted in a first version."
+                </p>
+                <div class="testimonial-meta">
+                  <strong>Maha K.</strong>
+                  <span>Club player, placeholder quote</span>
+                </div>
+              </article>
+              <article class="testimonial-card reveal">
+                <p>
+                  "The themes are fun, but the best part is that the game logic actually respects the rules."
+                </p>
+                <div class="testimonial-meta">
+                  <strong>Daniyal S.</strong>
+                  <span>Beginner improver, placeholder quote</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-cta" id="cta">
+          <div class="container">
+            <div class="cta-panel reveal">
+              <p class="eyebrow">Ready to play</p>
+              <h2>Jump into the board and test ChessBuddy right away.</h2>
+              <p>
+                The product page now leads directly into a playable local chess experience. Use the button below
+                to switch into the game board.
+              </p>
+              <div class="cta-actions">
+                <a class="button button-primary" href="#play" data-open-view="play">Open Chess Board</a>
+                <a class="button button-ghost" href="#hero" data-open-view="overview">Back to Top</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="view-panel" data-view-panel="play" hidden>
+        <section class="section play-section" id="play">
+          <div class="container play-shell reveal is-visible">
+            <div class="play-intro">
+              <p class="eyebrow">Play Chess</p>
+              <h2>Local board, full rules, both sides.</h2>
+              <p>
+                Click a piece to see its legal moves. ChessBuddy prevents illegal play, handles promotion,
+                castling, en passant, check, checkmate, stalemate, repetition, the fifty-move rule, and
+                insufficient-material draws.
+              </p>
+            </div>
+
+            <div class="play-layout">
+              <section class="game-board-panel">
+                <div class="game-board-toolbar">
+                  <div class="status-pill" id="turn-indicator">White to move</div>
+                  <button class="button button-ghost slim-button" type="button" id="flip-board-button">Flip Board</button>
+                </div>
+
+                <div class="game-board-frame variation-framed" id="game-board-frame">
+                  <div class="game-board" id="game-board" aria-label="Chess board"></div>
+                </div>
+
+                <div class="board-footer">
+                  <div class="capture-strip">
+                    <span class="capture-label">White captured</span>
+                    <div class="capture-pieces" id="captured-by-white"></div>
+                  </div>
+                  <div class="capture-strip">
+                    <span class="capture-label">Black captured</span>
+                    <div class="capture-pieces" id="captured-by-black"></div>
+                  </div>
+                </div>
+              </section>
+
+              <aside class="game-sidebar">
+                <section class="game-card">
+                  <h3>Game Status</h3>
+                  <p id="game-status-text">White to move.</p>
+                  <p class="result-text" id="game-result-text">No result yet.</p>
+                </section>
+
+                <section class="game-card">
+                  <h3>Customize</h3>
+                  <div class="control-grid">
+                    <label class="control-field">
+                      <span>Board theme</span>
+                      <select id="theme-select">
+                        <option value="classic">Classic Walnut</option>
+                        <option value="midnight">Midnight Slate</option>
+                        <option value="emerald">Emerald Hall</option>
+                        <option value="sunset">Sunset Bronze</option>
+                      </select>
+                    </label>
+                    <label class="control-field">
+                      <span>Piece style</span>
+                      <select id="piece-select">
+                        <option value="classic">Classic</option>
+                        <option value="outline">Outline</option>
+                        <option value="solid">Solid</option>
+                      </select>
+                    </label>
+                    <label class="control-field">
+                      <span>Board variation</span>
+                      <select id="variation-select">
+                        <option value="framed">Framed</option>
+                        <option value="glass">Glass</option>
+                        <option value="tournament">Tournament</option>
+                      </select>
+                    </label>
+                  </div>
+                </section>
+
+                <section class="game-card">
+                  <h3>Actions</h3>
+                  <div class="sidebar-actions">
+                    <button class="button button-secondary slim-button" type="button" id="new-game-button">New Game</button>
+                    <button class="button button-ghost slim-button" type="button" id="undo-button">Undo Move</button>
+                  </div>
+                </section>
+
+                <section class="game-card">
+                  <h3>Move History</h3>
+                  <ol class="move-list" id="move-list"></ol>
+                </section>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="promotion-modal" id="promotion-modal" hidden>
+    <div class="promotion-card">
+      <p class="eyebrow">Promotion</p>
+      <h3>Choose a piece</h3>
+      <div class="promotion-options">
+        <button class="promotion-choice" type="button" data-promotion="q"></button>
+        <button class="promotion-choice" type="button" data-promotion="r"></button>
+        <button class="promotion-choice" type="button" data-promotion="b"></button>
+        <button class="promotion-choice" type="button" data-promotion="n"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

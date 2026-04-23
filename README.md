@@ -1,2 +1,4 @@
-# chessbuddy
-This is my vibe coded chess website
+# Chess Buddy
+
+My vibe coded chess website
+
